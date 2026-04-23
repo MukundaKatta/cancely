@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    title: "Cancely — Cancel every subscription you forgot.",
+    description:
+      "Connect your card. See the 23 things you're paying for. Cancel any in one tap. Keep what you love.",
     images: [
       "https://waitlist-api-sigma.vercel.app/api/og?title=Cancely&accent=red&category=Personal%20finance",
     ],
