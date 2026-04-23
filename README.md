@@ -4,19 +4,39 @@
 
 Connect your card. See the 23 things you're paying for. Cancel any in one tap. Keep what you love.
 
-## What you get
+## Stack
 
-- **Finds hidden subs** — That free trial from 2022. That gym you haven't used. All surfaced, priced, dated.
-- **One-tap cancel** — We handle the retention pitches and the 'call to cancel' nonsense. You just tap.
-- **Average saver: $320/yr** — Paid for itself twenty times over before the end of month one.
+- **Next.js 15.3.1** — App Router, TypeScript strict
+- **Tailwind v4** — `@tailwindcss/postcss`, CSS-first config (no `tailwind.config` file)
+- **`next/font/google`** — Inter (replaces CDN link)
+- **pnpm** lockfile committed
 
-## Category
+## Run locally
 
-Personal finance. Part of a 50-product exploration of high-demand consumer and SMB markets.
+```bash
+pnpm install
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+## Deploy
+
+Zero Vercel config changes required — Next.js is auto-detected.
+No environment variables needed (waitlist API URL is public and hardcoded).
+
+```bash
+pnpm build   # 5 static routes + 1 dynamic (/api/waitlist)
+```
+
+## Routes
+
+| Route | Description |
+|---|---|
+| `/` | Landing page — hero, demo widget, features, CTA, footer |
+| `/try` | Subscription dashboard: 6 mock cards, cancel/undo toggle, running total, localStorage persistence |
+| `/api/waitlist` | POST `{ email }` — forwards to waitlist-api-sigma with `product: "cancely"` |
 
 ## Status
 
-Landing page live with interactive demo and functional waitlist.
-
-- **Live:** https://mukundakatta.github.io/cancely/
-- **Waitlist API:** https://waitlist-api-sigma.vercel.app/api/waitlist
+v0 skeleton. No real bank connection, no component libraries, no lorem ipsum, no feature invention beyond landing claims.
